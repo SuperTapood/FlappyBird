@@ -1,6 +1,7 @@
 from screen import Screen
 
 
-if __name__ == "__main__":
+def main():
 	scr = Screen()
 	scr.blitGame()
+	return

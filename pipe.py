@@ -49,4 +49,10 @@ class Pipe:
 		return
 
 	def checkForHit(self, y, x):
+		for pipeX, pipeY in zip(self.array, self.heights):
+			if pipeX >= 50 and pipeX <= 90:
+				if y > pipeY[0]:
+					return True
+				elif y < pipeY[1] + 320:
+					return True
 		return False

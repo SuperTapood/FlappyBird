@@ -50,7 +50,7 @@ class Screen:
 					quit()
 				elif event.type == pygame.KEYDOWN and chr(event.key) == " ":
 					self.jump = True
-			if self.bird.y >= self.border:
+			if self.bird.y >= self.border - 30:
 				print(f"You lost with a score of {floor(self.score)}")
 				quit()
 			self.pipeArray.delOut()
@@ -60,13 +60,10 @@ class Screen:
 				if self.bird.tick() is False:
 					self.jump = False
 			self.pipeArray.tick()
-			self.pipeArray.checkLength()
+			self.pipeArray.checkLength() 
 			if self.pipeArray.checkForHit(self.bird.y, self.bird.x):
 				print(f"You lost with a score of {floor(self.score)}")
 				quit()
 			pygame.display.update()
 		return
 	pass
-
-scr = Screen()
-scr.blitGame()
